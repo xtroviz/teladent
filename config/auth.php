@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'patient',
     ],
 
     /*
@@ -38,7 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'patient',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
         ],
 
         'api' => [
@@ -65,9 +70,13 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'patient' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\TeladentPatient::class,
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\TeladentAdmin::class,
         ],
 
         // 'users' => [
@@ -92,8 +101,15 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'patient' => [
+            'provider' => 'patient',
+            'table' => 'password_resets',
+            'email' => 'auth.emails.password',
+            'expire' => 60,
+        ],
+        'admin' => [
+            'provider' => 'admin',
+            'email' => 'admin.auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,
         ],
