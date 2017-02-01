@@ -1,3 +1,231 @@
+body {
+    background: #f6f4f4 none repeat scroll 0 0;
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+}
+#wrapper {
+    padding-left: 250px;
+    transition: all 0.5s ease 0s;
+}
+.admin-end {
+    padding-top: 50px;
+}
+.admin-top-nav {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 2px solid #5b2f91;
+}
+.admin-top-nav ul li {
+    color: #5b2f91;
+    position: relative;
+}
+.admin-top-nav ul li::after {
+    content: "";
+}
+.admin-top-nav ul li .username {
+    line-height: 47px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.admin-top-nav ul li a {
+    color: #5b2f91 !important;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 47px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.admin-top-nav ul li a i {
+    font-size: 24px;
+}
+.m-right {
+    margin-right: 15px;
+}
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
+.v-middle {
+    vertical-align: middle !important;
+}
+#sidebar-wrapper {
+    background: #7b69b5 none repeat scroll 0 0;
+    height: 100%;
+    left: 250px;
+    margin-left: -250px;
+    position: fixed;
+    transition: all 0.5s ease 0s;
+    width: 0;
+    z-index: 1000;
+    width: 250px;
+}
+.sidebar-nav {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 250px;
+}
+.sidebar-nav > .sidebar-brand {
+    font-size: 18px;
+    height: auto;
+    position: relative;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 0;
+    text-align: center;
+}
+.admin-end .sidebar-nav .sidebar-brand a {
+    background: #5b2f91 none repeat scroll 0 0;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px 0;
+    text-align: center;
+}
+.admin-menu li a, .merchant-profile-menu li a, .product-category-menu li a {
+    padding: 20px 50px;
+}
+.admin-menu li a {
+    position: relative;
+}
+.sidebar-nav li a {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 20px;
+    position: relative;
+    text-decoration: none;
+}
+.admin-menu li.sidebar-brand a::before {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.admin-menu li a::before {
+    background: rgba(0, 0, 0, 0) url("../images/sprite-adminmenu.png") no-repeat scroll 0 0;
+    content: "";
+    height: 25px;
+    left: 11px;
+    position: absolute;
+    top: 15px;
+    width: 25px;
+    z-index: 1;
+}
+
+.sidebar-nav > .sidebar-brand .icon {
+    font-size: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+.sidebar-nav li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+.admin-menu li a, .merchant-profile-menu li a, .product-category-menu li a {
+    padding: 20px 50px;
+}
+.admin-menu li a {
+    position: relative;
+}
+.sidebar-nav li a {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 20px;
+    position: relative;
+    text-decoration: none;
+}
+.admin-menu li a, .merchant-profile-menu li a, .product-category-menu li a {
+    padding: 20px 50px;
+}
+.admin-menu li a {
+    position: relative;
+}
+.admin-end .sidebar-nav .sidebar-brand .icon i {
+    display: block;
+    font-size: 72px;
+    left: auto;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.sidebar-nav > .sidebar-brand .icon i {
+    display: block;
+}
+.sidebar-nav li a i {
+    font-size: 18px;
+    left: 20px;
+    margin-right: 5px;
+    position: absolute;
+    top: 34%;
+    width: 20px;
+}
+.sidebar-nav > .sidebar-brand .icon-text {
+    line-height: 25px;
+}
+.sidebar-nav li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+#page-content-wrapper {
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+}
+#page-content-wrapper {
+    padding: 20px;
+    position: relative;
+}
+.m-bottom-s {
+    margin-bottom: 15px;
+}
+.m-top-s {
+    margin-top: 15px;
+}
+.bg-white {
+    background: #fff none repeat scroll 0 0;
+}
+.p-top {
+    padding-top: 30px;
+}
+.padder {
+    padding: 30px;
+}
+.text-d-blue {
+    color: #0e253a;
+}
+.no-margin {
+    margin: 0;
+}
+.spacer {
+    background: #01669a none repeat scroll 0 0;
+    padding: 3px;
+}
+.text-d-blue {
+    color: #0e253a;
+}
+/*HUMA IRFAN*/
 .help-block.has-error {
     color: red;
     margin-bottom: 0px;

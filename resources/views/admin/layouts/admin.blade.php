@@ -32,85 +32,60 @@
     </script>
 </head>
 <body>
-<div id="app">
+<div id="wrapper" class="admin-end">
     <div class="popup">
         <div class="popup-overlay"></div>
         <div class="popup-container">
             <div class="popup-content">
                 <p>Are you sure, you want to delete this record?</p>
-                <a href="javascript:;" class="btn btn-default btn-dismiss">No</a> <a
+                <a href="javascript:;" class="btn btn-default btn-dismiss" onclick="dismissMe()">No</a> <a
                         class="btn btn-danger btn-delete-url">Yes</a>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="javascript:;app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/admin/dashboard') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top admin-top-nav">
+        <div class="container-fluid">
+            <div class="col-md-10" id="navbar">
                 <ul class="nav navbar-nav">
-                    &nbsp;@if (Auth::guard('admin')->user())
-                        <li class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">Patients<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('admin/patients') }}">Patients List</a></li>
-                                <li><a href="{{ url('admin/patient/add') }}">Add Patient</a></li>
-                            </ul>
-                        </li>
-                    @endif
+                    <li class=""><a href="{{ url('/admin/dashboard') }}"><i
+                                    class="inline-block v-middle fa fa-cog m-right"></i><span
+                                    class="inline-block v-middle">Admin Portal</span></a></li>
                 </ul>
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guard('admin')->user())
-                        <li class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">
-                                {{ str_replace("-"," ",Auth::guard('admin')->user()->username) }} <span
-                                        class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ url('/admin/logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST"
-                                          style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @else
-                        <li><a href="{{ url('/admin') }}">Login</a></li>
-                        <li><a href="{{ url('/admin/register') }}">Register</a></li>
-                    @endif
+            </div>
+            <div class="col-md-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/admin/logout') }}" class="logout" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Log Out</a>
+                        <form id="logout-form" action="{{ url('/admin/logout') }}" method="POST"
+                              style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    @yield('content')
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav admin-menu">
+            <li class="sidebar-brand">
+                <a href="{{ url('/admin/dashboard') }}">
+                    <div class="icon">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <div class="icon-text">Admin <br class="visible-lg visible-md"/> Dashboard</div>
+                </a>
+            </li>
+            <li class="home">
+                <a href="{{ url('admin/patients') }}">Patients List</a>
+            </li>
+            <li><a href="{{ url('admin/patient/add') }}">Add Patient</a></li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+        @yield('content')
+    </div>
 </div>
 <!-- jQuery -->
 <script src="{{ URL::asset('js/jquery.js') }}"></script>
